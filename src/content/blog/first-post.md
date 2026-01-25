@@ -2,7 +2,7 @@
 title: '【2026年】投資ブログ開設！現在のポジションと今後の戦略'
 description: 'Astroで構築した新しいブログで、株の運用状況や市場の方向性について発信していきます。'
 pubDate: 'Jan 25 2026'
-heroImage: '/blog-placeholder-about.jpg'
+heroImage: '../../assets/blog-placeholder-about.jpg'
 ---
 
 ## ブログ開設の背景
