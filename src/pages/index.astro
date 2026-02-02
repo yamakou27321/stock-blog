@@ -1,37 +1,15 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
+/* スマホで横揺れしないように、また文字サイズを適切にする設定 */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
-<!doctype html>
-<html lang="ja">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🚀 Yamakouの投資 & vlog日記へようこそ</h1>
-			<p>
-				このブログでは、日々の資産運用の記録や、vlog制作の裏側、
-				たまに便利なガジェットやVPNなどの技術的な備忘録を公開しています。
-			</p>
-			
-			<h2>最近の投稿</h2>
-			<p>
-				右上の「Blog 一覧」や、カテゴリー別のメニューから記事をチェックしてください。
-			</p>
+main {
+  padding: 1em;
+  box-sizing: border-box;
+}
 
-			<section>
-				<h3>主なテーマ</h3>
-				<ul>
-					<li><strong>投資関連:</strong> 日本株・米国株の運用実績や分析。</li>
-					<li><strong>vlog:</strong> 撮影機材の話や動画編集のコツ。</li>
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+img {
+  max-width: 100%;
+  height: auto;
+}
