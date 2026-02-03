@@ -1,14 +1,14 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from '../../components/BaseHead.astro';  // ここは「../../」が正解
+import Header from '../../components/Header.astro';    // ここも「../../」
+import Footer from '../../components/Footer.astro';    // ここも「../../」
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'; // ここも「../../」
 import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
+import FormattedDate from '../../components/FormattedDate.astro'; // ここも「../../」
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 3);
+);
 ---
 <!doctype html>
 <html lang="ja">
