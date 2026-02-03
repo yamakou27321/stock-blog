@@ -2,7 +2,6 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
-
 <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
@@ -10,58 +9,18 @@ import { SITE_TITLE } from '../consts';
 			<HeaderLink href="/">ホーム</HeaderLink>
 			<HeaderLink href="/blog">一覧</HeaderLink>
 			<HeaderLink href="/blog/vlog">ビデオブログ</HeaderLink>
-			<HeaderLink href="/blog/others">その他</HeaderLink>
+			<HeaderLink href="/about">その他</HeaderLink>
 		</div>
 	</nav>
 </header>
-
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.2em;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 960px;
-		margin: 0 auto;
-	}
-	.internal-links {
-		display: flex;
-		gap: 5px;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: #333;
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-		font-size: 0.9em;
-	}
-	nav a.active {
-		border-bottom-color: var(--accent);
-		font-weight: bold;
-	}
-	/* スマホ表示の最適化 */
+	header { margin: 0; padding: 0 1em; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+	nav { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; }
+	.internal-links { display: flex; gap: 10px; }
+	nav a { padding: 1em 0.5em; color: #333; text-decoration: none; border-bottom: 4px solid transparent; }
+	nav a.active { border-bottom-color: var(--accent); font-weight: bold; }
 	@media (max-width: 720px) {
-		nav {
-			flex-direction: column;
-			padding: 0.5em;
-		}
-		.internal-links {
-			width: 100%;
-			justify-content: space-around;
-			gap: 0;
-		}
-		nav a {
-			padding: 0.8em 0.2em;
-			font-size: 0.85em;
-		}
+		nav { flex-direction: column; padding: 1em 0; }
+		.internal-links { width: 100%; justify-content: space-around; font-size: 0.8em; }
 	}
 </style>
