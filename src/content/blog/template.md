@@ -1,8 +1,7 @@
 ---
 title: 'ここにタイトルを書く'
-description: 'ここに短い説明文を書く'
-pubDate: '2026-02-01'
-heroImage: '/blog-placeholder-3.jpg'
+...
+heroImage: '../../assets/blog-placeholder-about.jpg'  <-- これに書き換え！
 tags: ["investing"]
 ---
 
