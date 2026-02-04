@@ -1,11 +1,13 @@
 backend:
   name: git-gateway
+  repo: yamakou27321/stock-blog
   branch: main
 
 media_folder: "public/assets"
 public_folder: "/assets"
 
 collections:
+  # 1. 通常のブログ記事
   - name: "blog"
     label: "ブログ記事"
     folder: "src/content/blog"
@@ -14,6 +16,29 @@ collections:
     fields:
       - { label: "タイトル", name: "title", widget: "string" }
       - { label: "説明文", name: "description", widget: "string" }
-      - { label: "公開日", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
-      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "公開日", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "タグ", name: "tags", widget: "list", default: ["investing"] }
+      - { label: "本文", name: "body", widget: "markdown" }
+
+  # 2. ビデオブログ（動画リンク用）
+  - name: "video"
+    label: "ビデオブログ"
+    folder: "src/content/video" # フォルダを分ける
+    create: true
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "YouTube動画ID", name: "videoId", widget: "string", hint: "URLの v= 後の英数字" }
+      - { label: "公開日", name: "pubDate", widget: "datetime" }
+      - { label: "解説文", name: "body", widget: "markdown" }
+
+  # 3. その他（固定ページ用）
+  - name: "pages"
+    label: "その他（ページ管理）"
+    files:
+      - label: "このサイトについて"
+        name: "about"
+        file: "src/content/about.md"
+        fields:
+          - { label: "タイトル", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+          
