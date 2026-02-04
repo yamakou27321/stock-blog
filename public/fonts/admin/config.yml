@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # あなたのGitHubのブランチ名
+
+media_folder: "public/assets" # 画像用（今回は使いませんが設定は必要）
+public_folder: "/assets"
+
+collections:
+  - name: "blog"
+    label: "ブログ記事"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "説明文", name: "description", widget: "string" }
+      - { label: "公開日", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD", dateFormat: "YYYY-MM-DD", timeFormat: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "タグ", name: "tags", widget: "list", default: ["investing"] }
