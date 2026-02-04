@@ -1,10 +1,10 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';  // ここは「../../」が正解
-import Header from '../../components/Header.astro';    // ここも「../../」
-import Footer from '../../components/Footer.astro';    // ここも「../../」
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'; // ここも「../../」
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro'; // ここも「../../」
+import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -28,7 +28,7 @@ const posts = (await getCollection('blog')).sort(
 					{posts.map((post) => (
 						<li style="margin-bottom: 1em; display: flex; gap: 1em;">
 							<FormattedDate date={post.data.pubDate} />
-							<a href={`/blog/${post.slug}/`} style="font-weight: bold; color: var(--accent);">{post.data.title}</a>
+							<a href={`/blog/${post.id}/`} style="font-weight: bold; color: var(--accent);">{post.data.title}</a>
 						</li>
 					))}
 				</ul>
@@ -40,4 +40,3 @@ const posts = (await getCollection('blog')).sort(
 		<Footer />
 	</body>
 </html>
-
