@@ -17,10 +17,11 @@ import { SITE_TITLE } from '../consts';
 	header { margin: 0; padding: 0 1em; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
 	nav { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; }
 	.internal-links { display: flex; gap: 10px; }
-	nav a { padding: 1em 0.5em; color: #333; text-decoration: none; border-bottom: 4px solid transparent; }
+	nav a { padding: 1.5em 0.5em; color: #333; text-decoration: none; border-bottom: 4px solid transparent; font-size: 0.9em; }
 	nav a.active { border-bottom-color: var(--accent); font-weight: bold; }
 	@media (max-width: 720px) {
 		nav { flex-direction: column; padding: 1em 0; }
+		h2 { font-size: 1.2em; margin-bottom: 0.5em; }
 		.internal-links { width: 100%; justify-content: space-around; font-size: 0.8em; }
 	}
 </style>
