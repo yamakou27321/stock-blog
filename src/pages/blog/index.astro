@@ -18,23 +18,15 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<div style="padding: 2em 0; border-bottom: 1px solid #eee;">
-				<h1>🚀 {SITE_TITLE}</h1>
-				<p>投資とビデオブログの制作過程を記録しています。</p>
-			</div>
 			<section>
-				<h2 style="margin-top: 1.5em;">最新の記事</h2>
-				<ul style="list-style: none; padding: 0;">
+				<ul>
 					{posts.map((post) => (
-						<li style="margin-bottom: 1em; display: flex; gap: 1em;">
+						<li>
 							<FormattedDate date={post.data.pubDate} />
-							<a href={`/blog/${post.id}/`} style="font-weight: bold; color: var(--accent);">{post.data.title}</a>
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
 						</li>
 					))}
 				</ul>
-				<div style="text-align: right; margin-top: 2em;">
-					<a href="/blog">→ すべての記事を見る</a>
-				</div>
 			</section>
 		</main>
 		<Footer />
