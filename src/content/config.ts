@@ -12,4 +12,3 @@ const blog = defineCollection({
 
 // 今後増やす「video」などもここに追加していくことになります
 export const collections = { blog };
-
