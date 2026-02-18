@@ -2,27 +2,73 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
+
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a href="/blog">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">ホーム</HeaderLink>
+			<HeaderLink href="/blog">ホーム</HeaderLink>
 			<HeaderLink href="/blog">一覧</HeaderLink>
 			<HeaderLink href="/blog/vlog">ビデオブログ</HeaderLink>
 			<HeaderLink href="/about">その他</HeaderLink>
 		</div>
 	</nav>
 </header>
+
 <style>
-	header { margin: 0; padding: 0 1em; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-	nav { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; }
-	.internal-links { display: flex; gap: 10px; }
-	nav a { padding: 1.5em 0.5em; color: #333; text-decoration: none; border-bottom: 4px solid transparent; font-size: 0.9em; }
-	nav a.active { border-bottom-color: var(--accent); font-weight: bold; }
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+	h2 a {
+		text-decoration: none;
+		color: #333;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.internal-links {
+		display: flex;
+		gap: 10px;
+	}
+	nav a {
+		padding: 1.5em 0.5em;
+		color: #333;
+		text-decoration: none;
+		border-bottom: 4px solid transparent;
+		font-size: 0.9em;
+		transition: 0.2s ease;
+	}
+	nav a:hover {
+		color: var(--accent);
+	}
+	nav a.active {
+		border-bottom-color: var(--accent);
+		font-weight: bold;
+	}
 	@media (max-width: 720px) {
-		nav { flex-direction: column; padding: 1em 0; }
-		h2 { font-size: 1.2em; margin-bottom: 0.5em; }
-		.internal-links { width: 100%; justify-content: space-around; font-size: 0.8em; }
+		nav {
+			flex-direction: column;
+			padding: 1em 0;
+		}
+		h2 {
+			font-size: 1.2em;
+			margin-bottom: 0.5em;
+		}
+		.internal-links {
+			width: 100%;
+			justify-content: space-around;
+			font-size: 0.8em;
+		}
 	}
 </style>
-
