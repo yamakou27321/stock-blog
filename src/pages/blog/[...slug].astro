@@ -1,18 +1,20 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
-		params: { slug: post.id }, // ID（ファイル名）をURLにする
+		params: { slug: post.id },
 		props: post,
 	}));
 }
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+// 旧: const { Content } = await post.render(); ではなく
+// 新: render(post) を使います
+const { Content } = await render(post);
 ---
 
 <BlogPost {...post.data}>
